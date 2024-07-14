@@ -157,6 +157,10 @@ roach2=lm(Weight~Length3+Width,data=Roach)
 summary.lm(roach2)
 ```
 
-The best two regressor model predict weight using L3-W (Lenght3 and Width). 
+The best two regressor model predict weight using L3-W (Lenght3 and Width).   
 
 ## Final Summary Statements
+
+For each of the three species of fish listed (Perch, Pike and Roach), the best regression model and also the best 2 element regression model was Pike. The adjusted $r^2$ was higher than the other fishes. (0.9794 and 0.9649)  
+
+For perch, the best two are height and width, for pike the best two are Length 1 and 3 and for Roach the best two are length 3 and width.
