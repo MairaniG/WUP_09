@@ -97,7 +97,34 @@ The best two regressor model predict weight using Height and Width.
 
 ### Best Models
 
+```{r}
+pikemodel=lm(Weight~ .,data=Pike)
+summary.lm(pikemodel)
+```
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Pike,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
+
+
 ### Best Two regressor model
+
+```{r}
+pike2=lm(Weight~Height+Width,data=Pike)
+summary.lm(pike2)
+```
+
 
 ## Roach
 
