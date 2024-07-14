@@ -121,10 +121,11 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 ### Best Two regressor model
 
 ```{r}
-pike2=lm(Weight~Height+Width,data=Pike)
+pike2=lm(Weight~Length1+Length1,data=Pike)
 summary.lm(pike2)
 ```
 
+The best two regressor model predict weight using Length1 and Length3. 
 
 ## Roach
 
