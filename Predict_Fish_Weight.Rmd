@@ -1,7 +1,7 @@
 ---
 title: "Weight of Fish"
-author: "Your Name"
-date: "`r Sys.Date()`"  
+author: "Mairani Galdamez"
+date: "7/13/24"  
 output: 
   html_document:
     number_sections: true
@@ -49,9 +49,24 @@ Whitefish <- select(Whitefish, -Species)
 # For each of the three species of fish listed below, determine the best regression model and also the best 2 element regression model. Use the BestSubset Regression helper file.
 
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+
+if(!require("Bolstad")) {install.packages("Bolstad");require("Bolstad")}
+```
+
+
 ## Perch
 
 ### Best Models
+
+```{r}
+perchmodel=lm(Weight~ .,data=Perch)
+summary.lm(perchmodel)
+```
+
 
 ### Best Two regressor model
 
